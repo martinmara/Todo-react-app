@@ -29,11 +29,11 @@ function App() {
 
   function toggleComplete(id) {
     setTodos(
-      todos.map(todo => {
+      todos.map((todo) => {
         if (todo.id === id) {
           return {
             ...todo,
-            completed: !todo.completed
+            completed: !todo.completed,
           };
         }
         return todo;
@@ -42,12 +42,15 @@ function App() {
   }
 
   function removeTodo(id) {
-    setTodos(todos.filter(todo => todo.id !== id));
+    setTodos(todos.filter((todo) => todo.id !== id));
   }
 
   return (
     <div className="App">
-      <Typography style={{ padding: 16 }} variant="h1">
+      <Typography
+        style={{ fontSize: 50, fontWeight: 700, padding: 16 }}
+        variant="h1"
+      >
         React Todo
       </Typography>
       <TodoForm addTodo={addTodo} />
